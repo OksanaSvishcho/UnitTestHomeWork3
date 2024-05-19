@@ -1,8 +1,12 @@
 public class SumCalculator {
     public int sum(int n) {
-        if (n < 0) {
-            throw new IllegalArgumentException("n should be a non-negative number");
+        if (n <= 0) {
+            throw new IllegalArgumentException("Number must be greater than 0");
         }
-        return (n * (n + 1)) / 2;
+        int result = 0;
+        for (int i = 1; i <= n; i++) {
+            result += i;
+        }
+        return result;
     }
 }

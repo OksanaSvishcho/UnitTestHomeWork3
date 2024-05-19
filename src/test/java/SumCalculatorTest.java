@@ -16,12 +16,24 @@ class SumCalculatorTest {
         assertEquals(1, calculator.sum(1));
     }
 
-    private void assertEquals(int i, int sum) {
-    }
 
     @Test
     public void testSumWithThree() {
         assertEquals(6, calculator.sum(3));
+    }
+
+    @Test
+    public void testSumWithZero() {
+        assertThrows(IllegalArgumentException.class, () -> {
+            calculator.sum(0);
+        });
+    }
+
+    @Test
+    public void testSumWithNegativeNumber() {
+        assertThrows(IllegalArgumentException.class, () -> {
+            calculator.sum(-1);
+        });
     }
 
 }
