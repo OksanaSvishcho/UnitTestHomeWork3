@@ -35,6 +35,13 @@ class SumCalculatorTest {
             calculator.sum(-1);
         });
     }
+    @Test
+    public void testSumWithMaxInt() {
+        assertThrows(ArithmeticException.class, () -> {
+            calculator.sum(Integer.MAX_VALUE);
+        });
+    }
+
 
 }
 
